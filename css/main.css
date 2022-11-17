@@ -1,0 +1,308 @@
+/* global variables */
+:root{
+    --activeBorderColor:linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --errorColor:hsl(0, 100%, 66%);
+    --lightGrayishViolet: hsl(270, 3%, 87%);
+    --darkGrayishViolet:hsl(279, 6%, 55%);
+    --veryDarkViolet: hsl(278, 68%, 11%);
+    --whiteColor:white;
+}
+/* global rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight:500;
+    font-size: 18px;
+}
+/* error messege */
+.error{
+    color: var(--errorColor);
+    font-size: 10px;
+    padding: .2rem;
+    height: 1rem;
+}
+.error-border-color{
+    border-color: var(--errorColor) !important;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container .card-container{
+    min-height: 250px;
+}
+.container .card-content{
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: cover;
+    height: 230px ;
+}
+@media (min-width:992px){
+    .container{
+        flex-direction: row;
+    }
+    .container .card-container{
+        min-width: 500px;
+    }
+    .container .card-content{
+        background-image: url("../images/bg-main-desktop.png");
+        height: 100vh;
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+    }
+}
+.container .card-content .back-card{
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    max-width: 375px;
+    margin: auto;
+}
+@media (min-width:992px){
+    .container .card-content .back-card{
+       margin: 0;
+       position: absolute;
+       transform: translate(20vw, 100px);
+       -webkit-transform: translate(20vw, 100px);
+       -moz-transform: translate(20vw, 100px);
+       -ms-transform: translate(20vw, 100px);
+       -o-transform: translate(20vw, 100px);
+}
+}
+.container .card-content .back-card img{
+   width: 280px;
+}
+.container .card-content .back-card .cvc{
+    color: var(--whiteColor);
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    font-size: 10px;
+}
+.container .card-content .front-card{
+    margin-top: -100px;
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width:992px){
+    .container .card-content .front-card{
+        margin: 0;
+        position: absolute;
+        transform: translate(17vw, -100px);
+        -webkit-transform: translate(17vw, -100px);
+        -moz-transform: translate(17vw, -100px);
+        -ms-transform: translate(17vw, -100px);
+        -o-transform: translate(17vw, -100px);
+    }
+}
+.container .card-content .front-card img{
+    width: 280px;
+}
+.container .card-content .front-card .card-num{
+    color: var(--whiteColor);
+    position: absolute;
+    top: 80px;
+    left: 38px;
+    letter-spacing: 2px;
+}
+.container .card-content .front-card .card-logo{
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    left: 38px;
+    top: 20px;
+    
+}
+.container .card-content .front-card .card-details{
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    position: absolute;
+    top: 120px;
+    left: 38px;
+    color: var(--whiteColor);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.container .form-container{
+    position: relative;
+    padding: 5rem 1rem 1rem 1rem;
+    margin: auto;
+    width: 375px;
+    height: 555px;
+}
+.container form{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    animation-name: thankyou-fade;
+    animation-duration: 1s;
+    animation-fill-mode:backwards;
+    animation-play-state: running;
+
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+@media (min-width: 992px) {
+    .container form{
+        padding: 2rem 0;
+    }
+}
+.container form label{
+    text-transform: uppercase;
+    color: var(--veryDarkViolet);
+    padding: .5rem 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.container form input{
+    font-size: 18px;
+    padding: .7rem .7rem;
+    border: 2px solid var(--lightGrayishViolet);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+}
+.container form input::placeholder{
+    color: var(--darkGrayishViolet);
+}
+.container form input:focus{
+    outline: none;
+    border:  2px  solid transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(white, white),var(--activeBorderColor);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.container form .card-info .info-labels{
+    padding: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container form .card-info .info-labels .cvc-label{
+    width: 190px;
+}
+.container form .card-info .info-input{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.container form .card-info .info-input .info-date{
+  min-width: 60px;
+}
+.container form .card-info .info-input .info-cvc{
+    width: 190px;
+}
+.container form .date-errors{
+    display: flex;
+    justify-content: space-between;
+}
+#cvc-error{
+    width: 190px;
+}
+#confirm-btn{
+    background-color: var(--veryDarkViolet);
+    color: var(--whiteColor);
+    margin: 1rem 0;
+    padding: 1rem;
+    cursor: pointer;
+    outline: none;
+    border:0;
+    background-image: none;
+}
+#confirm-btn:active, #confirm-btn:hover{
+    background-color: hsl(278, 58%, 21%);
+    outline: none;
+}
+#card-date-mm + p{
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+}
+#card-cvc + p{
+    position: absolute;
+    bottom: -1rem;
+    right: 7rem;
+}
+
+.thx{
+    position: absolute;
+    top: 4.5rem;
+    left: 1rem;
+    animation-name: thankyou-fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+@media (min-width:992px) {
+    .thx{
+        top: 6.5rem;
+    }
+}
+.thx.show-confirmation-msg {
+    display: flex;
+    animation-play-state: running;
+}
+.thx p{
+    color: var(--darkGrayishViolet);
+}
+#continue{
+    background-color: var(--veryDarkViolet);
+    color: var(--whiteColor);
+    font-size: 18px;
+    padding: 1rem;
+    cursor: pointer;
+    outline: none;
+    border:0;
+    background-image: none;
+    width: 340px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+@keyframes thankyou-fade {
+    from {opacity: 0}
+      to {opacity: 1}
+    }
+

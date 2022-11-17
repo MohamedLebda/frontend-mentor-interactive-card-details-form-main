@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <!-- google font space grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main css style sheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- main js file -->
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card-container">
+          <div class="card-content">
+            <div class="back-card">
+              <img src="images/bg-card-back.png" alt="back-card" />
+              <p class="cvc">000</p>
+            </div>
+            <div class="front-card">
+              <img src="images/bg-card-front.png" alt="front-card" />
+              <p class="card-num">0000 0000 0000 0000</p>
+              <img src="images/card-logo.svg" alt="logo" class="card-logo" />
+              <div class="card-details">
+                <p class="card-name">mohamed lebda</p>
+                <p class="exp-date">
+                  <span id="date-mm">00</span>/<span id="date-yy">00</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-container">
+          <form id="form">
+            <label for="card-name">Cardholder Name</label>
+            <input
+              type="text"
+              id="card-name"
+              name="card-name"
+              placeholder="e.g. Mohamed Lebda"
+              autocomplete="off"
+            />
+            <label for="card-num">Card Number</label>
+            <input
+              type="text"
+              id="card-num"
+              name="card-num"
+              placeholder="e.g. 1234 5678 9123 0000"
+              autocomplete="off"
+            />
+            <div class="card-info">
+              <div class="info-labels">
+                <label for="card-date" class="date-label"
+                  >Exp. Date (MM/YY)</label
+                >
+                <label for="card-cvc" class="cvc-label">CVC</label>
+              </div>
+              <div class="info-input">
+                <input
+                  type="text"
+                  id="card-date-mm"
+                  name="card-date"
+                  placeholder="MM"
+                  class="info-date"
+                  autocomplete="off"
+                />
+                <input
+                  type="text"
+                  id="card-date-yy"
+                  name="card-date-yy"
+                  placeholder="YY"
+                  class="info-date"
+                  autocomplete="off"
+                />
+                <input
+                  type="text"
+                  id="card-cvc"
+                  name="card-cvc"
+                  placeholder="e.g. 123"
+                  class="info-cvc"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <input type="submit" value="Confirm" id="confirm-btn" />
+
+            <!-- Completed state start -->
+          </form>
+          <div class="thx">
+            <div class="images">
+              <img src="images/icon-complete.svg" alt="check" />
+            </div>
+            <h1>Thank you!</h1>
+            <p>We've added your card details</p>
+            <button id="continue">Continue</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
